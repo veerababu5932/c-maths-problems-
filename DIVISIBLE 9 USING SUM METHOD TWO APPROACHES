@@ -1,0 +1,73 @@
+Take Input from the user;
+if you want handling with negative number you can use  abs(number) these library is present in stdlib.h
+after you have divide with n%9==0
+step =1;
+Step-by-Step:
+Read n = 991.
+Since 991 is positive, abs(991) = 991.
+Check divisibility: 991 ÷ 9 = 110 (quotient) with a remainder of 1 (since 991 - 9 × 110 = 991 - 990 = 1).
+Since 991 % 9 = 1 (not 0), 991 is not divisible by 9.
+Output: False
+step =2;
+Input-2: 999  (-999)  if suppose it is neagtive number we can use abs used for converting into positive number
+Step-by-Step:
+Read n = 999.
+Since 999 is positive, abs(999) = 999.
+Check divisibility: 999 ÷ 9 = 111 (quotient) with a remainder of 0 (since 999 - 9 × 111 = 999 - 999 = 0).
+Since 999 % 9 = 0, 999 is divisible by 9.
+Output: True
+APPROCACH -1
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    
+    // Read input number
+    scanf("%d", &n);
+    
+    // Handle negative numbers by converting to positive
+    n = abs(n);
+    
+    // Check if number is divisible by 9
+    if (n % 9 == 0) {
+        printf("True\n");
+    } else {
+        printf("False\n");
+    }
+    
+    return 0;
+}
+
+
+
+APPROACH =2
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    
+    // Read input number
+    scanf("%d", &n);
+    
+    // Handle negative numbers by converting to positive
+    n = abs(n);
+    
+    // Calculate sum of digits
+    int sum = 0;
+    int temp = n;
+    while (temp > 0) {
+        sum += temp % 10; // Add last digit
+        temp /= 10;       // Remove last digit
+    }
+    
+    // Check if sum is divisible by 9
+    if (sum % 9 == 0 && sum != 0) {
+        printf("True\n");
+    } else {
+        printf("False\n");
+    }
+    
+    return 0;
+}
