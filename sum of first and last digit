@@ -1,0 +1,44 @@
+Takes an integer input N using scanf
+Finds the last digit using modulo operator (%)
+Finds the first digit by repeatedly dividing by 10 until a single digit remains
+Calculates the sum of first and last digits
+Prints the result using printf
+last
+1234 %10;
+remainder =4;
+first =n;
+1234 /10;
+123;
+
+second iteration 
+123 %10;
+remainder =3;
+first =n;
+123/10;
+12;
+third iteration 
+12%10;
+remainder =2;
+first=n;
+12/10;
+1;
+
+// loop exist 1<10 the loop stops (after the loop first =1(the first digits of 1234)
+
+
+#include<stdio.h>
+int main()
+{
+int n;
+scanf("%d" , &n);
+int last =n%10;
+int first=n;
+while(first >=10)
+{
+first=first/10;
+}
+printf("%d" , last +first);
+}
+
+
+
